@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            color: white;
+        }
+        .navbar{
+            background-color: rgb(8, 7, 7);
+            width: 100vw;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+        .logo .image img{
+            width: 100px;
+            height: 50px;
+            margin: 1px;
+            padding: 1px 8px 0px 6px;
+        }
+        .address .address1{
+            margin-left: 12px;
+            font-size: 12px;
+        }
+        .address .address2{
+            display: flex;
+            align-items: center;
+        }
+        .address .address2 .second-add{
+            margin-left: 5px;
+        }
+        .searchbar{
+            display: flex;
+            width: 56%;
+            background-color: rgb(226, 194, 11);
+            border-radius: 5px;
+        }
+        .searchbar .select-searchbar .select{
+            width: 45px;
+            height: 40px;
+            border: none;
+            color: black;
+            text-align: center;
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+            background-color: rgb(218, 218, 218);
+        }
+        .searchbar .input-searchbar .inputn{
+            width: 730px;
+            height: 40px;
+            border: none;
+            padding-left: 15px;
+            color: black; 
+        }
+        .searchbar .searchicon-searchbar{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 45px;
+            height: 40px;
+            border: none;
+        }
+        .searchbar .searchicon-searchbar i{
+            font-size: 20px;
+            color: black; 
+        }
+        .about .about1 .ab1{
+            font-size: 12px;
+        }
+        .about .about1 .ab2{
+            font-size: 14px;
+            font-weight: bold;
+        }
+        .cart{
+            display: flex;
+            align-items: flex-end;
+        }
+        .cart .carticon i{
+            font-size: 30px;
+        }
+        .cart .carttext .text{
+            font-weight: bold;
+            margin-left: 5px;
+        }
+        .pannel{
+            background-color: #232f3e;
+            height: 39px;
+            width: 100vw;
+            display: flex;
+            align-items: center;
+        }
+        .pannel .allicon{
+            display: flex;
+            align-items: center;
+        }
+        .pannel .allicon .icon{
+            font-size: 25px;
+        }
+        .pannel .allicon .texticon .txti{
+            padding-left: 12px;
+            font-size: 16px;
+            font-weight: 700;
+        }
+        .list{
+            width: 43vw; 
+        }
+        .list .contents{
+            display: flex;
+            justify-content: space-evenly;
+        }
+        .pannel .elctronicsshop{
+            position: absolute;
+            right: 25px;
+        }
+        .mainarea .herosection{
+            background-image: url(/projectimages/hero_image.jpg);
+            width: 100vw;
+            height: 312px;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+        }
+        .mainarea .herosection .text{
+            background-color: #f5f6f6;
+            color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 1442.4px;
+            height: 40px;
+            font-size: 14px;
+        }
+        .mainarea .herosection .text a{
+            text-decoration: none;
+            color: #007185;
+        }
+        .mainarea .herosection .text a:hover{
+            text-decoration: underline;
+            color: orange;
+        }
+        footer .pannel1{
+            background-color: #132945de;
+            opacity: 3.49;
+            color: white;
+            height: 49px;
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        footer .pannel1 .pannel1-content{
+            font-size: 13px;
+            color: #ffffff;
+        }
+        footer .pannel2{
+            background-color: #232f3e;
+            color: white;
+            height: 360px;
+            width: 100vw;
+            display: flex;
+            justify-content:space-evenly ;
+        }
+        footer .pannel2 .headcont{
+            font-size: 16px;
+            margin: 30px 0px 14px;
+            font-weight: bold;
+        }
+        footer .pannel2 .contentsin{
+            font-size: 14px;
+            line-height: 30px;
+        }
+        footer .pannel3{
+            background-color: #232f3e;
+            color: white;
+            width: 100vw;
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;  
+        }
+        hr{
+            width: 100vw;
+            color: white;   
+        }
+        footer .pannel3 .contents-pannel3 .logo3 .logo3amazon{
+            width: 115.4px;
+            height: 55px;
+        }
+        footer .pannel3 .contents-pannel3 .logo3{
+            display: flex;
+            width: 15vw;
+            justify-content: flex-end;
+        }
+        footer .pannel3 .contents-pannel3{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        footer .pannel3 .contents-pannel3 .container-pannel31{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid white;
+            width: 100px;
+            height: 33px;
+            margin: 10px;
+        }
+        footer .pannel3 .contents-pannel3 .container-pannel31 .txt-pannel3{
+            margin-left: 6px;
+            font-size: 13px;
+            font-weight: bold;
+        }
+        footer .pannel3 .contents-pannel3 .container-pannel32{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid white;
+            width: 140px;
+            height: 33px;
+            margin: 10px;
+        }
+        footer .pannel3 .contents-pannel3 .container-pannel32 .txt-pannel3{
+            margin-left: 6px;
+            font-size: 13px;
+            font-weight: bold;
+        }
+        footer .pannel3 .contents-pannel3 .container-pannel33{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid white;
+            width: 140px;
+            height: 33px;
+            margin: 10px;
+        }
+        footer .pannel3 .contents-pannel3 .container-pannel33 .txt-pannel3{
+            margin-left: 6px;
+            font-size: 13px;
+            font-weight: bold;
+        }
+        footer .pannel5{
+            background-color: #131a22;
+            color: white;
+            width: 100vw;
+            height: 80px;    
+        }
+        footer .pannel5 .context1{
+            color: white;
+            font-size: 12px;
+            display: flex;
+            justify-content: center;
+            align-items: center;    
+        }
+        footer .pannel5 .context1 .context-text{
+            margin: 10px;
+        }
+        footer .pannel5 .context2{
+            color: white;
+            font-size: 12px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        footer .pannel5 .context2 .context-text{
+            margin: 10px;
+        }
+        footer .pannel4{
+            background-color: #131a22;
+            color: white;
+            width: 100vw;
+            height: 800px;  
+            display: flex;
+            justify-content: space-evenly;
+            flex-wrap: wrap;  
+        }
+        footer .pannel4 .sort{
+            display: inline-block;
+            width: 117px;
+            height: 60px;
+            margin: 34px;
+        }
+        footer .pannel4 .sort .heading123{
+            font-size: 12px;
+            font-weight: 700; 
+        }
+        footer .pannel4 .sort .infor{
+            font-size: 12px;  
+            line-height: 16px;
+        }
+        .border{
+            background-color: rgb(198, 218, 217);
+            /* border: 2px solid black; */
+            width: 100vw;
+            /* height: 1000px; */
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+        }
+        .border .containerf{
+            background-color: white;
+            margin-top: 15px;
+            margin-bottom: 15px;
+            /* border: 2px solid yellow; */
+            width: 23%;
+            height: 400px;
+            padding: 20px 0px 15px;
+            /* margin: 37px; */
+            display: inline-block;
+        }
+        .border .containerf h2{
+            /* height: 40px; */
+            /* background-color: white; */
+            color: black;
+            padding-top: 5px;
+            /* text-align:left; */
+        }
+        .border .containerf p{
+            /* height: 40px; */
+            /* background-color: white; */
+            color: #007185;
+           
+        }
+        .border .containerf .picture{
+            height: 300px;
+            background-size: cover;
+            /* background-repeat: no-repeat; */
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+        }
+        .box-con{
+            margin-left:10px ;
+            margin-right: 10px;
+        }
+
+
+
+
+        
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="logo">
+                <div class="image"><img src="/projectimages/amazon_logo.png" alt="image not found"></div>
+            </div>
+            <div class="address">
+                <div class="address1">
+                    <p class="first-add">deliver to</p>
+                </div>
+                <div class="address2">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <p class="second-add">India</p>
+                </div>
+            </div>
+            <div class="searchbar">
+                <div class="select-searchbar">
+                    <select name="all" id="" class="select" aria-placeholder="all">
+                        <option value="all">all</option>
+                    </select>
+                </div>
+                <div class="input-searchbar">
+                    <input type="text" placeholder="Amazon search" class="inputn">
+                </div>
+                <div class="searchicon-searchbar">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+            </div>
+            <div class="about">
+                <div class="about1">
+                    <p class="ab1">
+                        Hello, Sign in
+                    </p>
+                    <p class="ab2">Accounts & Lists</p>
+                </div>
+            </div>
+            <div class="about">
+                <div class="about1">
+                    <p class="ab1">
+                        Returns 
+                    </p>
+                    <p class="ab2">& Orders</p>
+                </div>
+            </div>
+            <div class="cart">
+                <div class="carticon">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                </div>
+                <div class="carttext">
+                    <p class="text">Cart</p>
+                </div>
+            </div>
+        </div>
+        <div class="pannel">
+            <div class="allicon">
+                <div class="icon">
+                    <i class="fa-solid fa-list"></i>
+                </div>
+                <div class="texticon">
+                    <p class="txti">All</p>
+                </div>
+
+            </div>
+            <div class="list">
+                <div class="contents">
+                    <p>Today's Deals</p>
+                    <p>Customer Services</p>
+                    <p>Registry</p>
+                    <p>Gift Cards</p>
+                    <p>Sell</p>
+                </div>
+            </div>
+            <div class="elctronicsshop">
+                <p class="shoptext">Shop deals in Electronics</p>
+            </div>
+        </div>
+    </header>
+    <div class="mainarea">
+        <div class="herosection">
+            <div class="text"> You are on amazon.com. You can also shop on Amazon India for millions of products with fast local delivery.  <a href="#" class="link"> Click here to go to amazon.in</a></div>
+            
+        </div>
+        <div class="border">
+            <div class="containerf">
+                <div class="box-con">
+                    <h2>Home Decor</h2>
+                    <div class="picture" style="background-image: url('/projectimages/box1_image.jpg');"></div>
+                    <p>see More</p>
+                </div>
+            </div>
+            <div class="containerf">
+                <div class="box-con">
+                    <h2>Menn's Self Care</h2>
+                    <div class="picture" style="background-image: url('/projectimages/box2_image.jpg');"></div>
+                    <p>see More</p>
+                </div>
+            </div>
+            <div class="containerf">
+                <div class="box-con">
+                    <h2>Furniture</h2>
+                    <div class="picture" style="background-image: url('/projectimages/box3_image.jpg');"></div>
+                    <p>see More</p>
+                </div>
+            </div>
+            <div class="containerf">
+                <div class="box-con">
+                    <h2>Electronics</h2>
+                    <div class="picture" style="background-image: url('/projectimages/box4_image.jpg');"></div>
+                    <p>see More</p>
+                </div>
+            </div>
+            <div class="containerf">
+                <div class="box-con">
+                    <h2>Beauty and Self care</h2>
+                    <div class="picture" style="background-image: url('/projectimages/box5_image.jpg');"></div>
+                    <p>see More</p>
+                </div>
+            </div>
+            <div class="containerf">
+                <div class="box-con">
+                    <h2>Pet Acessiories</h2>
+                    <div class="picture" style="background-image: url('/projectimages/box6_image.jpg');"></div>
+                    <p>see More</p>
+                </div>
+            </div>
+            <div class="containerf">
+                <div class="box-con">
+                    <h2>New arrival in Toys</h2>
+                    <div class="picture" style="background-image: url('/projectimages/box7_image.jpg');"></div>
+                    <p>see More</p>
+                </div>
+            </div>
+            <div class="containerf">
+                <div class="box-con">
+                    <h2>Discover Fashion Trends</h2>
+                    <div class="picture" style="background-image: url('/projectimages/box8_image.jpg');"></div>
+                    <p>see More</p>
+                </div>
+            </div>
+            
+
+        </div>
+        
+        
+    </div>
+    <footer>
+        <div class="pannel1">
+            <div class="pannel1-content">Back To Top</div>
+        </div>
+        <div class="pannel2">
+            <div class="containernew">
+                <div class="headcont">know about us</div>
+                <p class="contentsin">career</p>
+                <p class="contentsin">blogs </p>
+                <p class="contentsin">about amazon</p>
+                <p class="contentsin">investor relation</p>
+                <p class="contentsin">amazon devices</p>
+                <p class="contentsin">amazon science</p>
+            </div>
+            <div class="containernew">
+                <div class="headcont">Make Money with Us</div>
+                <p class="contentsin">Sell products on Amazon</p>
+                <p class="contentsin">Sell on Amazon Business </p>
+                <p class="contentsin">Sell apps on Amazon</p>
+                <p class="contentsin">Become an Affiliate</p>
+                <p class="contentsin">Advertise Your Products</p>
+                <p class="contentsin">Self-Publish with Us </p>
+                <p class="contentsin">Host an Amazon Hub</p>
+                <p class="contentsin">See More Make Money 
+                    with Us </p>
+                
+            </div>
+            <div class="containernew">
+                <div class="headcont">Amazon Payment Products</div>
+                <p class="contentsin">Amazon Business Card</p>
+                <p class="contentsin">Shop with Points </p>
+                <p class="contentsin">Reload Your Balance</p>
+                <p class="contentsin">Amazon Currency Converter</p>
+                
+            </div>
+            <div class="containernew">
+                <div class="headcont">Let Us Help You</div>
+                <p class="contentsin">Amazon and COVID-19</p>
+                <p class="contentsin">Your Account </p>
+                <p class="contentsin">Your Orders</p>
+                <p class="contentsin">Shipping Rates & Policies</p>
+                <p class="contentsin">Returns & Replacements</p>
+                <p class="contentsin">Manage Your Content and Devices</p>
+                <p class="contentsin">Amazon Assistant</p>
+                <p class="contentsin">Help</p>  
+            </div>
+        </div>
+        <hr>
+        <div class="pannel3">
+                
+                <div class="contents-pannel3">
+                    <div class="logo3">
+                        <img src="/projectimages/amazon_logo.png" alt="" class="logo3amazon">
+                    </div>
+                    <div class="container-pannel31">
+                        <div class="png"><i class="fa-solid fa-globe"></i></div>
+                        <p class="txt-pannel3">English</p>
+                    </div>
+                    <div class="container-pannel32">
+                        <div class="png"><i class="fa-solid fa-dollar-sign"></i></div>
+                        <p class="txt-pannel3">USD-U.S.Dollar</p>
+                    </div>
+                    <div class="container-pannel33">
+                        <div class="png"><i class="fa-solid fa-flag-usa"></i></div>
+                        <p class="txt-pannel3">United States</p>
+                    </div>
+
+                </div>
+
+        </div>
+        <div class="pannel4"> 
+            <div class="sort">
+                <div class="heading123">
+                    Amazon Music
+                </div>
+                <p class="infor">Stream millions
+                    </p>
+                <p class="infor">of songs</p>
+            </div>
+            <div class="sort">
+                <div class="heading123">
+                    Amazon Advertising
+                </div>
+                <p class="infor">Find, attract, </p>
+                <p class="infor">and</p>
+                <p class="infor">engage</p>
+                <p class="infor">customers</p>
+            </div>
+            <div class="sort">
+                <div class="heading123">
+                    6pm
+                </div>
+                <p class="infor">Score deals</p>
+                <p class="infor">on fashion </p>
+                <p class="infor">brands</p>
+            </div>
+            <div class="sort">
+                <div class="heading123">
+                    AbeBooks
+                </div>
+                <p class="infor">Books, art</p>
+                <p class="infor">& collectibles</p>
+            </div>
+            <div class="sort">
+                <div class="heading123">
+                    ACX
+                </div>
+                <p class="infor">Audiobook</p>
+                <p class="infor">Publishing</p>
+                <p class="infor">Made Easy</p>
+            </div>
+            <div class="sort">
+                <div class="heading123">
+                    Sell on Amazon
+                </div>
+                <p class="infor">Start a Selling Account</p>
+                <p class="infor">Selling Account</p>
+            </div>
+            <div class="sort">
+                <div class="heading123">
+                    Amazon Business
+                </div>
+                <p class="infor">name</p>
+                <p class="infor">info</p>
+                <p class="infor">about</p>
+                <p class="infor">age</p>
+                <p class="infor">gender</p>
+            </div>
+            <div class="sort">
+                <div class="heading123">
+                    heading1
+                </div>
+                <p class="infor">Everything For</p>
+                <p class="infor">Your Business</p>
+            </div>
+            <div class="sort">
+                <div class="heading123">
+                    AmazonGlobal
+                </div>
+                <p class="infor">Ship Orders</p>
+                <p class="infor">Internationally</p>
+            </div>
+            <div class="sort">
+                <div class="heading123">
+                    Home Services
+                </div>
+                <p class="infor">Experienced</p>
+                <p class="infor">Pros</p>
+                <p class="infor">Happiness</p>
+                <p class="infor">Guarantee</p>
+            </div>
+            <div class="sort">
+                <div class="heading123">
+                    Amazon Ignite
+                </div>
+                <p class="infor">Sell</p>
+                <p class="infor">your</p>
+                <p class="infor">original</p>
+                <p class="infor">Digital</p>
+                <p class="infor">Educational</p>
+                <p class="infor">Resources</p>
+            </div>
+            <div class="sort">
+                <div class="heading123">
+                    Amazon Web Services
+                </div>
+                <p class="infor">Scalable Cloud</p>
+                <p class="infor">Computing Services</p>
+            </div>
+            <div class="sort">
+                <div class="heading123">
+                    Audible
+                </div>
+                <p class="infor">Listen to Books & Original</p>
+                <p class="infor">Original</p>
+                <p class="infor">Audio</p>
+                <p class="infor"> Performances</p>
+            </div>
+            <div class="sort">
+                <div class="heading123">
+                    Book Depository
+                </div>
+                <p class="infor">Books With Free</p>
+                <p class="infor">Delivery</p>
+                <p class="infor">Worldwide</p>
+            </div>
+            <div class="sort">
+                <div class="heading123">
+                    Box Office Mojo
+                </div>
+                <p class="infor">Find Movie</p>
+                <p class="infor">Box Office Data</p>
+            </div>
+            <div class="sort">
+                <div class="heading123">
+                    ComiXology
+                </div>
+                <p class="infor">Thousands of</p>
+                <p class="infor">Digital Comics</p>
+            </div>
+            <div class="sort">
+                <div class="heading123">
+                    DPReview
+                </div>
+                <p class="infor">Digital</p>
+                <p class="infor">Photography</p>
+            </div>
+            <div class="sort">
+                <div class="heading123">
+                    Fabric
+                </div>
+                <p class="infor">Sewing, </p>
+                <p class="infor">Quilting</p>
+                <p class="infor">& Knitting</p>
+                <p class="infor">age</p>
+            </div>
+            <div class="sort">
+                <div class="heading123">
+                    Goodreads
+                </div>
+                <p class="infor">Book reviews</p>
+                <p class="infor">& recommendations</p>
+            </div>
+            <div class="sort">
+                <div class="heading123">
+                    IMDb
+                </div>
+                <p class="infor">Movies, TV</p>
+                <p class="infor">& Celebrities</p>
+            </div>
+            <div class="sort">
+                <div class="heading123">
+                    IMDbPro
+                </div>
+                <p class="infor">Get Info </p>
+                <p class="infor">Entertainment</p>
+                <p class="infor">Professionals</p>
+                <p class="infor">Need</p>
+            </div>
+            <div class="sort">
+                <div class="heading123">
+                    Kindle Direct Publishing
+                </div>
+                <p class="infor">Indie Digital &</p>
+                <p class="infor">Print Publishing</p>
+                <p class="infor">Made Easy</p>
+            </div>
+            <div class="sort">
+                <div class="heading123">
+                    Prime Video Direct
+                </div>
+                <p class="infor">Video</p>
+                <p class="infor"> Distribution</p>
+                <p class="infor">Made Easy</p>
+            </div>
+            <div class="sort">
+                <div class="heading123">
+                    Shopbop
+                </div>
+                <p class="infor">Designer </p>
+                <p class="infor">Fashion Brands</p>
+                <p class="infor">about</p>
+                <p class="infor">age</p>
+                <p class="infor">gender</p>
+            </div>
+            <div class="sort">
+                <div class="heading123">
+                    Woot!
+                </div>
+                <p class="infor">Deals and</p>
+                <p class="infor">Shenanigans</p>
+            </div>
+            <div class="sort">
+                <div class="heading123">
+                    
+                    Zappos
+                </div>
+                <p class="infor">Shoes &</p>
+                <p class="infor">Clothing</p>
+            </div>
+            <div class="sort">
+                <div class="heading123">
+                    Ring
+                </div>
+                <p class="infor">Smart Home </p>
+                <p class="infor">Security Systems</p>
+            </div>
+            <div class="sort">
+                <div class="heading123">
+                    eero WiFi
+                </div>
+                <p class="infor">Stream 4K Video</p>
+                <p class="infor">in Every Room</p>
+            </div>
+            <div class="sort">
+                <div class="heading123">
+                    Blink
+                </div>
+                <p class="infor">Smart Security</p>
+                <p class="infor">for Every Home</p>
+            </div>
+            <div class="sort">
+                <div class="heading123">
+                    Neighbors App
+                </div>
+                <p class="infor">Real-Time</p>
+                <p class="infor">Crime</p>
+                <p class="infor">& Safety</p>
+                <p class="infor">Alerts</p>
+            </div>
+            <div class="sort">
+                <div class="heading123">
+                    Amazon Subscription Boxes
+                </div>
+                <p class="infor">Top subscription boxes - </p>
+                <p class="infor">right to your door</p>
+            </div>
+            <div class="sort">
+                <div class="heading123">
+                    
+                    PillPack
+                </div>
+                <p class="infor">Pharmacy </p>
+                <p class="infor">Simplified</p>
+            </div>
+        </div>
+        <div class="pannel5">
+            <div class="context1">
+                <p class="context-text">condition of use </p>
+                <p class="context-text">privacy notice</p>
+                <p class="context-text">your adds privacy choices</p>
+
+            </div>
+            <div class="context2">
+                <div class="copy"><i class="fa-regular fa-copyright"></i></div>
+                <p class="context-text">Design with <i class="fa-regular fa-heart"></i> &nbsp; from <a href="#"></a>&nbsp;pritiranjansamal868@gmail.com</p>
+                
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
