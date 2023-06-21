@@ -114,7 +114,7 @@
     right: 25px;
 }
 .mainarea .herosection{
-    background-image: url(projectimages/hero_image.jpg);
+    background-image: url("projectimages/hero_image.jpg");
     width: 100vw;
     height: 312px;
     background-size: cover;
